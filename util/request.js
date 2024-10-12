@@ -89,7 +89,7 @@ const createRequest = (uri, data, options) => {
     }
     if (typeof cookie === 'object') {
       let _ntes_nuid = CryptoJS.lib.WordArray.random(32).toString()
-      let os = osMap[cookie.os] || osMap['iphone']
+      let os = osMap[cookie.os] || osMap['pc']
       cookie = {
         ...cookie,
         __remember_me: 'true',
@@ -301,4 +301,4 @@ const createRequest = (uri, data, options) => {
   })
 }
 
-module.exports = createRequest
+module.exports = createRequest, osMap
